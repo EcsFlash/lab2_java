@@ -2,6 +2,9 @@ package com.ecsclown;
 
 import java.util.*;
 
+/**
+ * FuncNode - node that contains function and argument
+ */
 public class FuncNode implements INode{
     private final String funcName;
     private final INode arg;
@@ -11,6 +14,11 @@ public class FuncNode implements INode{
         this.arg = arg;
     }
 
+    /** This function calculates result of function with given argument
+    * @param variables  map with variables names and their values.
+    * @return double result - result of math function with given argument
+    * @throws  IllegalStateException if unexpected function was in node
+    */
     @Override
     public double calc(Map<String, Double> variables) {
         double argVal = arg.calc(variables);
